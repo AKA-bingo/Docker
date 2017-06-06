@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y git docker.io && rm -rf /var/lib/apt/li
 
 RUN git clone https://github.com/AKA-bingo/Docker \
 	&& docker build -t hybingo/develop:ubuntu-14.04 Docker/ubuntu/. \
-	&& docker build -t hybingo/develop:mysql-5.6 Docker/ubuntu/. \
+	&& docker build -t hybingo/develop:mysql-5.6 Docker/mysql/. \
 	&& docker push hybingo/develop:ubuntu-14.04 \
 	&& docker push hybingo/develop:mysql-5.6 \
 	&& rm -rf Docker
