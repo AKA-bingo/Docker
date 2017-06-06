@@ -1,8 +1,6 @@
 #构建一个自动将github项目下的Dockerfile生成对应镜像并推送到hybingo/develop仓库
 FROM ubuntu:14.04
 
-FROM ubuntu:14.04
-
 MAINTAINER BinGo <icebin000@gmail.com>
 
 # 更新源
