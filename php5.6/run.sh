@@ -1,7 +1,8 @@
 docker run 
+    -i \
+    -t \
     -d \
-    -it \
     -p 80:80 \
-    --name=php-dev \
-    -v e:/workspace/www/LSB:/var/www/html \
+    --name = php-dev \
+    -v src/:/var/www/html \
     hybingo/php:5.6-apache
