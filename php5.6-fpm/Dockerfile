@@ -30,7 +30,13 @@ RUN curl -fsSL 'https://xcache.lighttpd.net/pub/Releases/3.2.0/xcache-3.2.0.tar.
     && rm -r xcache \
     && docker-php-ext-enable xcache
 
-VOLUME /var/www/html
+#安装数据库扩展
+RUN docker-php-ext-install pdo_mysql mysqli \
+    && docker-php-ext-enable pdo_mysql mysqli
+
+WORKDIR /var/www
+
+VOLUME /var/www
 
 EXPOSE 9000
 
