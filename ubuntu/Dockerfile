@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
-MAINTAINER BinGo <icebin000@gmail.com>
+MAINTAINER BinGo
 
 #更换源
 ADD sources.list /etc/apt/sources.list./

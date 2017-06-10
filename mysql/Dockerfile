@@ -1,6 +1,6 @@
 FROM mysql:5.6
 
-MAINTAINER BinGo <icebin000@gmail.com>
+MAINTAINER BinGo
 
 VOLUME /var/lib/mysql
 
