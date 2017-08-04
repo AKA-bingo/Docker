@@ -30,6 +30,21 @@ RUN curl -fsSL 'https://xcache.lighttpd.net/pub/Releases/3.2.0/xcache-3.2.0.tar.
     && rm -r xcache \
     && docker-php-ext-enable xcache
 
+#安装swoole
+RUN curl -fsSL 'https://github.com/swoole/swoole-src/archive/v1.9.17.tar.gz' -o swoole.tar.gz \
+    && mkdir -p swoole \
+    && tar -xf swoole.tar.gz -C swoole --strip-components=1 \
+    && rm swoole.tar.gz \
+    && ( \
+        cd swoole \
+        && phpize \
+        && ./configure \
+        && make \
+        && make install \
+    ) \
+    && rm -r swoole \
+    && docker-php-ext-enable swoole
+
 #安装数据库扩展
 RUN docker-php-ext-install pdo_mysql mysqli \
     && docker-php-ext-enable pdo_mysql mysqli
