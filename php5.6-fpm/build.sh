@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker build -t hybingo/php5.6:fpm .
+docker build -t hybingo/php:5.6-fpm .
