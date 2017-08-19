@@ -3,15 +3,17 @@ FROM ubuntu:14.04
 MAINTAINER BinGo
 
 #更换源
-ADD sources.list /etc/apt/sources.list./
+#ADD sources.list /etc/apt/sources.list./
 
 # 更新源
 RUN apt-get update    
 
 # 安装常用软件
-RUN apt-get update && apt-get install -y vim git tar wget curl && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y git tar wget curl python-dev ncurses-dev ctags && rm -rf /var/lib/apt/lists/*
 
 # 设置个人配置
+RUN git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+
 RUN git clone https://github.com/AKA-bingo/config && sh config/setup.sh
 
 CMD ["/bin/bash"]
