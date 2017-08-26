@@ -3,7 +3,7 @@ FROM ubuntu:14.04
 MAINTAINER BinGo
 
 #更换源
-ADD sources.list /etc/apt/sources.list./
+ADD sources.list /etc/apt/sources.list
 
 # 更新源
 RUN apt-get update    
